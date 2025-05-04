@@ -2147,3 +2147,77 @@ img.img-fluid {
   }
 }
 
+/* === Responsive Fix: Logo & Navbar for Mobile === */
+@media (max-width: 768px) {
+  .header .logo {
+    margin: 0 auto;
+    justify-content: center;
+    width: 100%;
+  }
+  .header .logo img {
+    max-width: 70%;
+    height: auto;
+  }
+
+  .header .container-fluid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #navmenu {
+    display: none;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+  }
+
+  #navmenu.active {
+    display: flex;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #navmenu {
+    display: none;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  #navmenu.active {
+    display: flex;
+  }
+
+  #mobile-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: black;
+  }
+}
+
+@media (min-width: 769px) {
+  #mobile-toggle {
+    display: none;
+  }
+}
+

@@ -11,6 +11,8 @@
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,8 +56,11 @@
           <li><a href="#ourwork" style="color: black;">Our Work</a></li>
           <li><a href="#contact" style="color: black;">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
+      
+      <!-- Hamburger icon -->
+      <i id="mobile-toggle" class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      
     
     </div>
   </header>
@@ -578,7 +583,17 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.getElementById('mobile-toggle');
+      const nav = document.getElementById('navmenu');
+      toggle.addEventListener('click', function () {
+        nav.classList.toggle('active');
+      });
+    });
+  </script>
+  
+  
 </body>
 
 </html>
