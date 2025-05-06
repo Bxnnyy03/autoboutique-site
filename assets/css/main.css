@@ -2147,24 +2147,12 @@ img.img-fluid {
   }
 }
 
-/* === เมนูพื้นฐาน === */
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-
+/* ปกติ: ยังไม่กำหนด display */
 #navmenu {
-  display: flex; /* เมนูในแนวนอน */
   gap: 20px;
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-#navmenu li {
-  list-style: none;
 }
 
 #navmenu li a {
@@ -2174,37 +2162,13 @@ img.img-fluid {
   padding: 10px;
 }
 
-/* ซ่อน hamburger icon บนจอกว้าง */
-#mobile-toggle {
-  display: none;
-}
-
-/* === สำหรับมือถือ === */
+/* สำหรับมือถือ */
 @media (max-width: 768px) {
-  /* เมื่อหน้าจอเล็กลง ปรับการจัดตำแหน่งของ navbar */
-  .navbar-container {
-    flex-direction: column; /* ทำให้โลโก้และ hamburger icon อยู่ในแนวตั้ง */
-    align-items: center; /* ให้อยู่กลาง */
-  }
-
-  /* โลโก้จะอยู่ตรงกลาง */
-  .header .logo {
-    margin: 0 auto;
-    justify-content: center;
-    width: auto;
-  }
-
-  .header .logo img {
-    max-width: 70%;
-    height: auto;
-  }
-
-  /* ทำให้เมนูเป็นแนวตั้ง */
   #navmenu {
-    display: none; /* ซ่อนเมนูเริ่มต้น */
-    flex-direction: column; /* แสดงเมนูเป็นแนวตั้ง */
+    display: none !important;
+    flex-direction: column !important;
     position: absolute;
-    top: 100%; /* วางเมนูใต้โลโก้ */
+    top: 100%;
     right: 0;
     width: 100%;
     background: white;
@@ -2214,30 +2178,66 @@ img.img-fluid {
     text-align: center;
   }
 
-  /* เมื่อคลิกเมนูจะแสดง */
   #navmenu.active {
-    display: flex;
+    display: flex !important;
   }
 
-  /* ปุ่ม hamburger icon */
+  #navmenu li {
+    display: block;
+    width: 100%;
+  }
+
   #mobile-toggle {
-    display: block; /* แสดงบนมือถือ */
-    font-size: 28px;
-    cursor: pointer;
-    color: black;
+    display: block !important;
+  }
+}
+
+/* สำหรับเดสก์ท็อป */
+@media (min-width: 769px) {
+  #navmenu {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    position: relative !important;
+    box-shadow: none !important;
+  }
+
+  #navmenu li {
+    display: inline-block;
+  }
+
+  #mobile-toggle {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+  }
+
+  .logo {
+    margin: 0 auto;
+    text-align: center;
+    flex: 1;
+  }
+
+  .logo img {
+    max-width: 70%;
+    height: auto;
+  }
+
+  #mobile-toggle {
+    display: block !important;
     position: absolute;
     top: 10px;
     right: 20px;
-  }
-
-  /* รายการเมนูในแนวตั้ง */
-  #navmenu li {
-    display: block; /* ให้รายการเมนูแสดงในแนวตั้ง */
-    width: 100%; /* ให้แต่ละรายการเมนูขยายเต็มความกว้าง */
-  }
-
-  #navmenu li a {
-    padding: 10px;
-    font-size: 18px;
+    font-size: 28px;
+    cursor: pointer;
+    color: black;
   }
 }

@@ -63,6 +63,7 @@
     <i id="mobile-toggle" class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     
     
+    
     </div>
   </header>
   
@@ -585,7 +586,6 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- JavaScript สำหรับ Toggle Menu -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const toggle = document.getElementById('mobile-toggle');
@@ -593,12 +593,14 @@
       if (toggle && nav) {
         toggle.addEventListener('click', function () {
           nav.classList.toggle('active');
+          console.log('Navbar toggled!');  // ดูว่าคลิกแล้วทำงานไหม
         });
       } else {
         console.error('Element not found');
       }
     });
   </script>
+  
 
 </body>
 
