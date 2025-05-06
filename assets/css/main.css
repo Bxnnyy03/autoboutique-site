@@ -2147,77 +2147,97 @@ img.img-fluid {
   }
 }
 
-/* === Responsive Fix: Logo & Navbar for Mobile === */
+/* === เมนูพื้นฐาน === */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+#navmenu {
+  display: flex; /* เมนูในแนวนอน */
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#navmenu li {
+  list-style: none;
+}
+
+#navmenu li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  padding: 10px;
+}
+
+/* ซ่อน hamburger icon บนจอกว้าง */
+#mobile-toggle {
+  display: none;
+}
+
+/* === สำหรับมือถือ === */
 @media (max-width: 768px) {
+  /* เมื่อหน้าจอเล็กลง ปรับการจัดตำแหน่งของ navbar */
+  .navbar-container {
+    flex-direction: column; /* ทำให้โลโก้และ hamburger icon อยู่ในแนวตั้ง */
+    align-items: center; /* ให้อยู่กลาง */
+  }
+
+  /* โลโก้จะอยู่ตรงกลาง */
   .header .logo {
     margin: 0 auto;
     justify-content: center;
-    width: 100%;
+    width: auto;
   }
+
   .header .logo img {
     max-width: 70%;
     height: auto;
   }
 
-  .header .container-fluid {
-    flex-direction: column;
-    align-items: center;
-  }
-
+  /* ทำให้เมนูเป็นแนวตั้ง */
   #navmenu {
-    display: none;
-    flex-direction: column;
-    background: white;
-    width: 100%;
-    text-align: center;
+    display: none; /* ซ่อนเมนูเริ่มต้น */
+    flex-direction: column; /* แสดงเมนูเป็นแนวตั้ง */
     position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 999;
-  }
-
-  #navmenu.active {
-    display: flex;
-  }
-
-  .mobile-nav-toggle {
-    display: block;
-    font-size: 28px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  #navmenu {
-    display: none;
-    flex-direction: column;
-    background: white;
+    top: 100%; /* วางเมนูใต้โลโก้ */
+    right: 0;
     width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 1rem;
+    z-index: 1000;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   }
 
+  /* เมื่อคลิกเมนูจะแสดง */
   #navmenu.active {
     display: flex;
   }
 
+  /* ปุ่ม hamburger icon */
   #mobile-toggle {
-    display: block;
+    display: block; /* แสดงบนมือถือ */
     font-size: 28px;
     cursor: pointer;
     color: black;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+
+  /* รายการเมนูในแนวตั้ง */
+  #navmenu li {
+    display: block; /* ให้รายการเมนูแสดงในแนวตั้ง */
+    width: 100%; /* ให้แต่ละรายการเมนูขยายเต็มความกว้าง */
+  }
+
+  #navmenu li a {
+    padding: 10px;
+    font-size: 18px;
   }
 }
-
-@media (min-width: 769px) {
-  #mobile-toggle {
-    display: none;
-  }
-}
-

@@ -46,21 +46,22 @@
     
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" width="300" height="600">
-      </a>
+    </a>
     
-      <nav id="navmenu" class="navmenu">
+    <!-- เมนู Navbar -->
+    <nav id="navmenu" class="navbar-container">
         <ul>
-          <li><a href="#hero" class="active" style="color: black;">Home</a></li>
-          <li><a href="#services" style="color: black;">Services</a></li>
-          <li><a href="#about" style="color: black;">About</a></li>
-          <li><a href="#ourwork" style="color: black;">Our Work</a></li>
-          <li><a href="#contact" style="color: black;">Contact</a></li>
+            <li><a href="#hero" class="active" style="color: black;">Home</a></li>
+            <li><a href="#services" style="color: black;">Services</a></li>
+            <li><a href="#about" style="color: black;">About</a></li>
+            <li><a href="#ourwork" style="color: black;">Our Work</a></li>
+            <li><a href="#contact" style="color: black;">Contact</a></li>
         </ul>
-      </nav>
-      
-      <!-- Hamburger icon -->
-      <i id="mobile-toggle" class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      
+    </nav>
+    
+    <!-- Hamburger icon -->
+    <i id="mobile-toggle" class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    
     
     </div>
   </header>
@@ -574,7 +575,7 @@
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
+   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -583,17 +584,23 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- JavaScript สำหรับ Toggle Menu -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const toggle = document.getElementById('mobile-toggle');
       const nav = document.getElementById('navmenu');
-      toggle.addEventListener('click', function () {
-        nav.classList.toggle('active');
-      });
+      if (toggle && nav) {
+        toggle.addEventListener('click', function () {
+          nav.classList.toggle('active');
+        });
+      } else {
+        console.error('Element not found');
+      }
     });
   </script>
-  
-  
+
 </body>
+
 
 </html>
