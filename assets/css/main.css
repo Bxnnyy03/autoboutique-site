@@ -2241,3 +2241,9 @@ img.img-fluid {
     color: black;
   }
 }
+
+/* Override สีพื้นใน section container เพื่อให้ภาพพื้นหลังแสดง */
+.contact.section .container {
+  background-color: transparent;
+}
+
