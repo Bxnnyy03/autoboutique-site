@@ -158,10 +158,13 @@ h6 {
   line-height: 1;
 }
 
-.header .logo img {
+.logo img {
   max-height: 70px;
-  margin-right: 8px;
+  height: auto;
+  width: auto;
 }
+
+
 
 .header .logo h1 {
   font-size: 30px;
@@ -2246,4 +2249,12 @@ img.img-fluid {
 .contact.section .container {
   background-color: transparent;
 }
+
+@media (min-width: 992px) {
+  .col-lg-2-4 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
 
